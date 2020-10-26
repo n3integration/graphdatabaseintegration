@@ -129,4 +129,6 @@ dmypy.json
 .pyre/
 
 # Other
-data
+data/p
+data/w
+data/zw
