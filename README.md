@@ -1,5 +1,4 @@
-# graphdatabaseintegration
-Graph Database Integration Using GraphQL Talk - Open Source Summit 2020
+# Graph Database Integration Using GraphQL Talk - Open Source Summit 2020
 
 ![demo](img/demo.gif)
 
