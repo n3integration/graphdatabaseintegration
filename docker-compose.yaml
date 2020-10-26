@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  zero:
+    image: dgraph/dgraph:v20.07.2
+    ports:
+      - 5080:5080
+      - 6080:6080
+    volumes:
+      - ./data:/dgraph
+    restart: on-failure
+    command: dgraph zero --my=zero:5080
+  alpha:
+    image: dgraph/dgraph:v20.07.2
+    ports:
+      - 8080:8080
+      - 9080:9080
+    volumes:
+      - ./data:/dgraph
+    restart: on-failure
+    command: dgraph alpha --my=alpha:7080 --zero=zero:5080 --whitelist=172.17.0.0:172.32.0.0
+  ratel:
+    image: dgraph/dgraph:v20.07.2
+    ports:
+      - 8000:8000
+    command: dgraph-ratel

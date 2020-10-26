@@ -1,0 +1,26 @@
+# Predicates
+atVenue: uid @reverse .
+date: datetime @index(day) .
+isLocatedIn: uid @reverse .
+location: string @index(term, trigram) @upsert .
+playedEncore: [uid] @count @reverse .
+playedSong: [uid] @count @reverse .
+song: string @index(term, trigram) @upsert .
+venue: string @index(term, trigram) @upsert .
+# Types
+type location {
+	location
+}
+type setlist {
+	date
+	atVenue
+	playedSong
+	playedEncore
+}
+type song {
+	song
+}
+type venue {
+	venue
+	isLocatedIn
+}
